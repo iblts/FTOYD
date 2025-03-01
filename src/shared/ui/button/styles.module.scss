@@ -1,0 +1,28 @@
+.button {
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 204px;
+	height: 56px;
+	padding: 16px;
+	gap: 10px;
+	background: $red;
+	border: none;
+	color: $text;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 21.78px;
+	letter-spacing: 0%;
+	cursor: pointer;
+	transition: background 0.2s;
+
+	&:active {
+		background: $redPressed;
+	}
+
+	&:disabled {
+		background: $redDisabled;
+		color: $textDisabled;
+	}
+}

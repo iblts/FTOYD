@@ -1,0 +1,26 @@
+.list {
+	list-style: none;
+	display: grid;
+	row-gap: 12px;
+}
+
+.match {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: $gray;
+	border-radius: 4px;
+	padding: 16px 36px;
+}
+
+.team {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	font-weight: 600;
+}
+
+.scores {
+	font-weight: 600;
+}
