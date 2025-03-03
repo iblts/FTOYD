@@ -1,0 +1,26 @@
+.matchStatus {
+	padding: 6px 2px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 14.52px;
+	letter-spacing: 0%;
+
+	&.match_preparing {
+		background: $orange;
+		width: 112px;
+	}
+
+	&.live {
+		background: $green;
+		width: 92px;
+	}
+
+	&.finished {
+		background: $red;
+		width: 92px;
+	}
+}

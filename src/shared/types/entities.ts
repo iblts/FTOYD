@@ -1,5 +1,5 @@
 import { MATCH_STATUS } from '../constants'
-import { ValuesOf } from '../utilits'
+import type { ValuesOf } from '../utilits'
 
 export interface Match {
 	time: string
@@ -11,9 +11,14 @@ export interface Match {
 	status: MatchStatus
 }
 
+export interface MatchResponse extends Omit<Match, 'status'> {
+	status: MatchResponseStatus
+}
+
+type MatchResponseStatus = 'Scheduled' | 'Ongoing' | 'Finished'
 export type MatchStatus = ValuesOf<typeof MATCH_STATUS>
 
-export interface Team {
+interface Team {
 	name: string
 	players: Player[]
 	points: number
@@ -21,7 +26,7 @@ export interface Team {
 	total_kills: number
 }
 
-export interface Player {
+interface Player {
 	username: string
 	kills: number
 }

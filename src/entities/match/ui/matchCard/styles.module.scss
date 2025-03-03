@@ -1,0 +1,25 @@
+.match {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: $gray;
+	border-radius: 4px;
+	padding: 16px 36px;
+}
+
+.team {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	font-weight: 600;
+}
+
+.matchInfo {
+	text-align: center;
+	display: grid;
+	row-gap: 4px;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24.2px;
+}

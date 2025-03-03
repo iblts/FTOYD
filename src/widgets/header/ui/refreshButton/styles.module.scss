@@ -1,0 +1,19 @@
+.body {
+	display: flex;
+	gap: 12px;
+}
+
+.error {
+	display: flex;
+	align-items: center;
+	width: 480px;
+	height: 56px;
+	border-radius: 4px;
+	padding: 16px;
+	gap: 10px;
+	background: #0f1318;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21.78px;
+	letter-spacing: 0%;
+}
