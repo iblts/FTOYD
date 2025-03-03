@@ -1,9 +1,14 @@
 import { API_ROUTES } from '@/shared/constants'
-import { Match, Response } from '@/shared/types'
+import type { MatchResponse, Response } from '@/shared/types'
+import { transformMatch } from './matchDto'
 
-export const getMatches = async (): Promise<
-	Response<{ matches: Match[] }> | undefined
-> => {
+export const getMatches = async () => {
 	const res = await fetch(API_ROUTES.MATCHES)
-	return await res.json()
+	const data: Response<{ matches: MatchResponse[] }> = await res.json()
+
+	if (!data.ok) {
+		throw new Error('Ошибка: не удалось загрузить информацию')
+	}
+
+	return data.data.matches.map(transformMatch)
 }

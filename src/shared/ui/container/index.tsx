@@ -16,7 +16,7 @@ export default function Container({
 		<div
 			className={styles.container}
 			style={{
-				width,
+				maxWidth: width,
 				padding,
 			}}
 			{...props}

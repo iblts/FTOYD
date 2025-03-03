@@ -1,41 +1,34 @@
 'use client'
 
-import { IconTeam } from '@/shared/ui'
+import { MatchCard } from '@/entities/match'
 import { useMatches } from '../../model/hooks'
 import styles from './styles.module.scss'
 
 export default function MatchesList() {
-	const { matches, isLoading, error } = useMatches()
+	const { matches, isLoading } = useMatches()
 
 	if (isLoading) {
-		return <h1>Loading...</h1>
+		return (
+			<ul className={styles.list}>
+				{new Array(6).fill('').map((_, i) => (
+					<div key={i} className={styles.skeletonCard} />
+				))}
+			</ul>
+		)
 	}
 
 	return (
 		<ul className={styles.list}>
 			{matches?.map(match => (
-				<li
-					className={styles.match}
+				<MatchCard
+					match={match}
 					key={
 						match.awayTeam.name +
 						match.homeTeam.name +
 						match.time +
 						match.status
 					}
-				>
-					<div className={styles.team}>
-						<IconTeam />
-						{match.homeTeam.name}
-					</div>
-
-					<span className={styles.scores}>
-						{match.homeScore}:{match.awayScore}
-					</span>
-					<div className={styles.team}>
-						{match.awayTeam.name}
-						<IconTeam />
-					</div>
-				</li>
+				/>
 			))}
 		</ul>
 	)
