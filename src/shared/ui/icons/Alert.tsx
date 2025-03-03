@@ -1,12 +1,17 @@
 import type { IconProps } from '@/shared/types'
 
-export default function IconAlert({ size = 28, fill = '#EB0237' }: IconProps) {
+export default function IconAlert({
+	size = 28,
+	fill = '#EB0237',
+	...props
+}: IconProps) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			width={size}
 			height={size}
 			fill='none'
+			{...props}
 		>
 			<path
 				stroke={fill}

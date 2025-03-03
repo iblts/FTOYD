@@ -1,6 +1,6 @@
 import type { IconProps } from '@/shared/types'
 
-export default function IconTeam({ size = 48 }: IconProps) {
+export default function IconTeam({ size = 48, ...props }: IconProps) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -8,6 +8,7 @@ export default function IconTeam({ size = 48 }: IconProps) {
 			height={(49 / 48) * size}
 			viewBox='0 0 48 49'
 			fill='none'
+			{...props}
 		>
 			<path
 				fill='url(#a)'

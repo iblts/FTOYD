@@ -1,12 +1,17 @@
 import type { IconProps } from '@/shared/types'
 
-export default function IconRefresh({ size = 26, fill = '#fff' }: IconProps) {
+export default function IconRefresh({
+	size = 26,
+	fill = '#fff',
+	...props
+}: IconProps) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			width={size}
 			height={size}
 			fill='none'
+			{...props}
 		>
 			<path
 				fill={fill}
