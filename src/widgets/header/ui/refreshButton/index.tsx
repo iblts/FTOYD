@@ -3,6 +3,7 @@
 import { QUERY_KEYS } from '@/shared/constants'
 import { Button, IconAlert, IconRefresh } from '@/shared/ui'
 import { useQueryClient } from '@tanstack/react-query'
+import classNames from 'classnames'
 import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 
@@ -43,7 +44,10 @@ export default function RefreshButton() {
 			)}
 			<Button onClick={handleRefresh} disabled={isFetching}>
 				Обновить
-				<IconRefresh fill={isFetching ? '#787878' : undefined} />
+				<IconRefresh
+					fill={isFetching ? '#787878' : undefined}
+					className={classNames(styles.icon, { [styles.animate]: isFetching })}
+				/>
 			</Button>
 		</div>
 	)

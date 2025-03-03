@@ -15,5 +15,35 @@
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 21.78px;
-	letter-spacing: 0%;
+	letter-spacing: 0;
+}
+
+.icon.animate {
+	animation: loader 2s ease-in-out infinite;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-180deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+@supports (rotate: 0deg) {
+	@keyframes loader {
+		0% {
+			rotate: 0deg;
+		}
+		50% {
+			rotate: -180deg;
+		}
+		100% {
+			rotate: -360deg;
+		}
+	}
 }
