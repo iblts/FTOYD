@@ -17,6 +17,10 @@
 	cursor: pointer;
 	transition: background 0.2s;
 
+	&:hover {
+		background: $redHovered;
+	}
+
 	&:active {
 		background: $redPressed;
 	}
